@@ -2,6 +2,8 @@ class Solution {
     public int reverse(int x) 
     {
        long y = 0;
+       int min = Integer.MIN_VALUE;
+       int max = Integer.MAX_VALUE -1;
 
        while(x != 0)
        {
@@ -10,7 +12,7 @@ class Solution {
         x = x/10;
        }
 
-       if(Integer.MIN_VALUE > y || y > Integer.MAX_VALUE -1)
+       if(min > y || y > max)
        {
         return 0;
        }
