@@ -2,8 +2,8 @@ class Solution {
     public int reverse(int x) 
     {
        long y = 0;
-       int min = Integer.MIN_VALUE;
-       int max = Integer.MAX_VALUE -1;
+       int min = -2147483648;
+       int max = 2147483647;
 
        while(x != 0)
        {
