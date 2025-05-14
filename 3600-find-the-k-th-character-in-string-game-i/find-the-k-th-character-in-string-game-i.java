@@ -4,16 +4,14 @@ class Solution
     {
         char ch = 'a';
         String string = "a";
-        String s = calculation(string,k);
-        char result = s.charAt(k-1);
-        return result;
+        return calculation(string,k);
     }
 
-    public String calculation(String string, int k)
+    public char calculation(String string, int k)
     {
         if(string.length() >= k)
         {
-            return string;
+            return string.charAt(k-1);
         }
         int l = string.length();
         for(int i=0; i<l; i++)
