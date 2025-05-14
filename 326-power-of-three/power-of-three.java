@@ -6,8 +6,7 @@ class Solution
         {
             return false;
         }
-        boolean result = calculation(n);
-        return result;
+        return calculation(n);
     }
 
     public boolean calculation(int n)
