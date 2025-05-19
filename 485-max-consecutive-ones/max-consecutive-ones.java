@@ -15,11 +15,8 @@ class Solution
                 max = Math.max(max,count);
                 count = 0;
             }
-            if(i == nums.length-1)
-            {
-                max = Math.max(max,count);
-            }
         }
+        max = Math.max(max,count);
         return max;
     }
 }
