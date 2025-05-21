@@ -4,9 +4,9 @@ class Solution
     {
         int max = Integer.MIN_VALUE;
         int sum = 0;
-        for(int i=0; i<nums.length; i++)
+        for(int temp : nums)
         {
-            sum+=nums[i];
+            sum += temp;
             max = Math.max(max,sum);
             if(sum < 0)
             {
