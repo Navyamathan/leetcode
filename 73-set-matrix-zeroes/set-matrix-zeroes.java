@@ -24,13 +24,10 @@ class Solution
         {
             for(int j=0; j<m; j++)
             {
-                if(matrix[i][j] != 0)
-                {
                     if(row[i] || col[j])
                     {
                         matrix[i][j] = 0;
                     }
-                }
             }
         }
 
