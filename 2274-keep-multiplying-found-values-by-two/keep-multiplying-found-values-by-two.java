@@ -2,16 +2,13 @@ class Solution
 {
     public int findFinalValue(int[] nums, int original) 
     {
-        Arrays.sort(nums);
-        int index = 0;
         while(true)
         {
             boolean found = false;
-            for(int i=index; i<nums.length; i++)
+            for(int i=0; i<nums.length; i++)
             {
                 if(nums[i] == original)
                 {
-                    index = i;
                     found = true;
                     break;
                 }
