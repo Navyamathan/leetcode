@@ -1,25 +1,18 @@
 class Solution {
     public String truncateSentence(String s, int k) 
     {
-        String temp = "";
-        int count = 1;
+        int count = 0;
         for(int i=0; i<s.length(); i++)
         {
-            char ch = s.charAt(i);
-            if(ch == ' ')
+            if(s.charAt(i) == ' ')
             {
-                if(count == k)
-                {
-                    break;
-                }
-                temp = temp+String.valueOf(ch);
                 count++;
             }
-            else
+            if(count == k)
             {
-                temp = temp+String.valueOf(ch);
+                return s.substring(0,i);
             }
         }
-        return temp;
+        return s;
     }
 }
