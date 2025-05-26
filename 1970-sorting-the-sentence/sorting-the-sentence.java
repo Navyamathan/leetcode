@@ -2,19 +2,13 @@ class Solution
 {
     public String sortSentence(String s) 
     {
-        HashMap<Integer,String> map = new HashMap<>();
         String[] ss = s.split(" ");
+        String[] sorted = new String[ss.length];
         for(int i=0; i<ss.length; i++)
         {
-            int index = ss[i].charAt(ss[i].length()-1) - '0';
-            String temp = ss[i].substring(0,ss[i].length()-1);
-            map.put(index,temp);
+            int index = (ss[i].charAt(ss[i].length()-1) - '0') -1;
+            sorted[index] = ss[i].substring(0,ss[i].length()-1);
         }
-    String result = map.get(1);
-    for(int i=2; i<=ss.length; i++)
-    {
-        result += " "+map.get(i);
-    }
-    return result;
+        return String.join(" ",sorted);
     }
 }
