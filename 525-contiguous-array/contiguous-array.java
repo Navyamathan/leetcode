@@ -6,6 +6,7 @@ class Solution
         int zero = 0;
         int one = 0;
         int max = 0;
+        map.put(0,-1);
         for(int i=0; i<nums.length; i++)
         {
             if(nums[i] == 1)
@@ -20,10 +21,6 @@ class Solution
             if(map.containsKey(one-zero))
             {
                 max = Math.max(max, i-map.get(one-zero));
-            }
-            else if(one == zero)
-            {
-                max = Math.max(max,i+1); 
             }
             else
             {
