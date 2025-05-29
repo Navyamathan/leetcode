@@ -3,12 +3,15 @@ class Solution
     public String reverseWords(String s) 
     {
         String[] array = s.trim().split("\\s+");
-        String temp = "";
-        temp = temp+array[array.length-1];
-        for(int i=array.length-2; i>=0; i--)
+        StringBuilder sb = new StringBuilder();
+        for(int i=array.length-1; i>=0; i--)
         {
-            temp = temp+" "+array[i];
+            sb.append(array[i]);
+            if(i > 0)
+            {
+                sb.append(" ");
+            }
         }
-        return temp;
+        return sb.toString();
     }
 }
