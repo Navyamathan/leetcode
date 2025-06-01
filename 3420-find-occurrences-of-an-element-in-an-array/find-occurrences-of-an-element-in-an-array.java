@@ -2,22 +2,20 @@ class Solution
 {
     public int[] occurrencesOfElement(int[] nums, int[] queries, int x) 
     {
-       HashMap<Integer,Integer> map = new HashMap<>();
-       int count = 0;
+       ArrayList<Integer> list = new ArrayList<>();
        for(int i=0; i<nums.length; i++)
        {
         if(nums[i] == x)
         {
-            count++;
-            map.put(count,i);
+            list.add(i);
         }
        }
        int[] result = new int[queries.length];
        for(int i=0; i<queries.length; i++)
        {
-        if(map.containsKey(queries[i]))
+        if(queries[i] <= list.size())
         {
-            result[i] = map.get(queries[i]);
+            result[i] = list.get(queries[i]-1);
         }
         else
         {
