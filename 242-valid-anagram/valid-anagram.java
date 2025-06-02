@@ -5,10 +5,13 @@ class Solution
         if(s.length() != t.length()) return false;
 
         int[] count = new int[26];
-        for(int i=0; i<s.length(); i++)
+        for(char ch : s.toCharArray())
         {
-            count[s.charAt(i)-'a']++;
-            count[t.charAt(i)-'a']--;
+            count[ch-'a']++;
+        }
+        for(char ch : t.toCharArray())
+        {
+            count[ch-'a']--;
         }
         for(int temp : count)
         {
