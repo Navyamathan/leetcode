@@ -2,10 +2,9 @@ class Solution
 {
     public int smallestDivisor(int[] nums, int threshold) 
     {
-        int max = findMax(nums);
         int ans = 0;
         int l = 1;
-        int h = max;
+        int h = 1000000;
         while(l <= h)
         {
             int m = (l+h)/2;
@@ -22,17 +21,7 @@ class Solution
         }
         return ans;
     }
-
-    public int findMax(int[] nums)
-    {
-        int max = nums[0];
-        for(int i=1; i<nums.length; i++)
-        {
-            max = Math.max(max,nums[i]);
-        }
-        return max;
-    }
-
+    
     public int sumOfDigit(int[] nums, int m)
     {
         int sum = 0;
