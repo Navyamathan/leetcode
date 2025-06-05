@@ -7,8 +7,8 @@ class Solution
         int h = 1000000;
         while(l <= h)
         {
-            int m = (l+h)/2;
-            int sum = sumOfDigit(nums, m);
+            int m = l+(h-l)/2;
+            long sum = sumOfDigit(nums, m);
             if(sum <= threshold)
             {
                  ans = m;
@@ -21,13 +21,13 @@ class Solution
         }
         return ans;
     }
-    
-    public int sumOfDigit(int[] nums, int m)
+
+    public long sumOfDigit(int[] nums, int m)
     {
-        int sum = 0;
+        long sum = 0;
         for(int temp : nums)
         {
-            sum += Math.ceil((double) temp / (double) m);
+            sum += (temp-1) / m+1;
         }
         return sum;
     }
