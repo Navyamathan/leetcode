@@ -2,15 +2,13 @@ class Solution
 {
     public int shipWithinDays(int[] weights, int days) 
     {
-       int max = Integer.MIN_VALUE;
-       int sum = 0;
+       int l = Integer.MIN_VALUE;
+       int h = 0;
        for(int temp : weights)
        {
-        max = Math.max(max,temp);
-        sum += temp;
+        l = Math.max(l,temp);
+        h += temp;
        }
-       int l = max;
-       int h = sum;
        while(l <= h)
        {
         int m = (l+h)/2;
@@ -29,13 +27,13 @@ class Solution
 
     public int findDay(int[] w, int m)
     {
-        int count = 1;
+        int day = 1;
         int sum = 0;
         for(int temp : w)
         {
             if(sum + temp > m)
             {
-                count++;
+                day++;
                 sum = temp;
             }
             else
@@ -43,6 +41,6 @@ class Solution
                 sum += temp;
             }
         }
-        return count;
+        return day;
     }
 }
