@@ -6,7 +6,11 @@ class Solution
         int index = -1;
         for(int i=0; i<mat.length; i++)
         {
-            int count = countOfOnes(mat[i]);
+            int count = 0;
+            for(int j = 0; j<mat[i].length; j++)
+            {
+                count += mat[i][j];
+            }
             if(count > maxCount)
             {
                 maxCount = count;
@@ -14,18 +18,5 @@ class Solution
             }
         }
         return new int[] {index,maxCount};
-    }
-
-    public int countOfOnes(int[] arr)
-    {
-        int count = 0;
-        for(int temp : arr)
-        {
-            if(temp == 1)
-            {
-                count++;
-            }
-        }
-        return count;
     }
 }
