@@ -3,25 +3,24 @@ class Solution
     public int countHillValley(int[] nums) 
     {
         int count = 0;
-        ArrayList<Integer> set = new ArrayList<>();
-        set.add(nums[0]);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(nums[0]);
         for(int i=1; i<nums.length; i++)
         {
             if(nums[i-1] != nums[i])
             {
-                set.add(nums[i]);
+                list.add(nums[i]);
             }
         }
-        for(int i=1; i<set.size()-1; i++)
+
+        for(int i=1; i<list.size()-1; i++)
         {
-            if(set.get(i) > set.get(i+1) && set.get(i) > set.get(i-1))
-            {
-                count++;
-            }
-            else if(set.get(i) < set.get(i+1) && set.get(i) < set.get(i-1))
-            {
-                count++;
-            }
+            int curt = list.get(i);
+            int prev = list.get(i-1);
+            int next = list.get(i+1);
+            if(curt > prev && curt > next) count++;
+            else if(curt < prev && curt < next) count++;
         }
         return count;
     }
