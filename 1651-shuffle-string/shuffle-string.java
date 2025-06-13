@@ -2,11 +2,11 @@ class Solution
 {
     public String restoreString(String s, int[] indices) 
     {
-        char [] ch = s.toCharArray();
+        char [] ch = new char[s.length()];
         for(int i=0; i<indices.length; i++)
         {
             ch[indices[i]] = s.charAt(i);
         }
-        return String.valueOf(ch);
+        return new String(ch);
     }
 }
