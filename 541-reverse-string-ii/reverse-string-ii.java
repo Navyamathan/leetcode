@@ -1,6 +1,6 @@
 class Solution 
 {
-     public String reverseStr(String s, int k) 
+    public String reverseStr(String s, int k) 
     {
         char [] ch = s.toCharArray();
         int n = s.length();
@@ -14,7 +14,7 @@ class Solution
         return new String(ch);
     }
 
-     public void swap(char[] ch, int start, int end)
+    public void swap(char[] ch, int start, int end)
     {
         while(start < end)
         {
