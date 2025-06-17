@@ -6,11 +6,11 @@ class Solution
         for(String temp : words)
         {
             str += temp;
-            if(s.equals(str))
+            if(s.length() == str.length())
             {
-                return true;
+                break;
             }
         }
-        return false;
+        return s.equals(str);
     }
 }
