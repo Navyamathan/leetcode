@@ -2,30 +2,15 @@ class Solution
 {
     public boolean isPrefixString(String s, String[] words) 
     {
-        int n = s.length();
-        int i = 0;
-        boolean found = false;
+        String str = "";
         for(String temp : words)
         {
-            if(i+temp.length() > n)
+            str += temp;
+            if(s.equals(str))
             {
-                System.out.println(i);
-                break;
+                return true;
             }
-            if(!temp.contains(s.substring(i,i+temp.length())))
-            {
-                return false;
-            }
-            else
-            {
-                found = true;
-            }
-            i = i+temp.length();
         }
-        if(i < n)
-        {
-            return false;
-        }
-        return found;
+        return false;
     }
 }
