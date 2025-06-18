@@ -6,8 +6,20 @@ class Solution
         {
             return -1;
         }
-        Arrays.sort(nums);
-        return nums[1];
-        
+        int min = Math.min(nums[0],nums[1]);
+        int max = Math.max(nums[0],nums[1]);
+        int extra = nums[2];
+        if(extra < min)
+        {
+            return min;
+        }
+        else if( extra > max)
+        {
+            return max;
+        }
+        else
+        {
+            return extra;
+        }
     }
 }
