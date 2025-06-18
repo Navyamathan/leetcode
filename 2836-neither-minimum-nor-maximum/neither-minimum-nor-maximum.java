@@ -17,9 +17,6 @@ class Solution
         {
             return max;
         }
-        else
-        {
-            return extra;
-        }
+        return extra;
     }
 }
