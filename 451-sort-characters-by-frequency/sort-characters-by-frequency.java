@@ -15,15 +15,20 @@ class Solution
             }
         }
         
-        ArrayList<Character> chObj = new ArrayList<>(map.keySet());
-        Collections.sort(chObj, (a,b) -> {
-            return Integer.compare(map.get(b),map.get(a));
-        });
+        // ArrayList<Character> chObj = new ArrayList<>(map.keySet());
+        // Collections.sort(chObj, (a,b) -> {
+        //     return Integer.compare(map.get(b),map.get(a));
+        // });
+
+        PriorityQueue<Character> pq = new PriorityQueue<>((a,b) -> map.get(b) - map.get(a));
+
+        pq.addAll(map.keySet());
 
         StringBuilder sb = new StringBuilder();
 
-        for(char ch : chObj)
+        while(!pq.isEmpty())
         {
+            char ch = pq.poll();
             sb.append(String.valueOf(ch).repeat(map.get(ch)));
         }
         return sb.toString();
