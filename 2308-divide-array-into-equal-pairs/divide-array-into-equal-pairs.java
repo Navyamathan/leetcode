@@ -2,10 +2,14 @@ class Solution
 {
     public boolean divideArray(int[] nums) 
     {
-        Arrays.sort(nums);
-        for(int i=0; i<nums.length-1; i += 2)
+        int[] values = new int[501];
+        for(int i=0; i<nums.length; i++)
         {
-            if(nums[i] != nums[i+1])
+            values[nums[i]]++;
+        }
+        for(int num : nums)
+        {
+            if(values[num]%2 != 0)
             {
                 return false;
             }
