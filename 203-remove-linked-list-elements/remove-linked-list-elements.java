@@ -12,12 +12,15 @@ class Solution
 {
     public ListNode removeElements(ListNode head, int v) 
     {
-        if(head == null)
-        return head;
+        if(head == null) return null;
+        
+        while(head != null && head.val == v)
+        {
+            head = head.next;
+        }
 
-        ListNode dummy = new ListNode(0,head);
-        ListNode current = dummy;
-        while(current.next != null)
+        ListNode current = head;
+        while(current != null && current.next != null)
         {
             if(current.next.val == v)
             {
@@ -28,6 +31,22 @@ class Solution
                 current = current.next;
             }
         }
-        return dummy.next;
+
+        return head; 
+
+        // ListNode dummy = new ListNode(0,head);
+        // ListNode current = dummy;
+        // while(current.next != null)
+        // {
+        //     if(current.next.val == v)
+        //     {
+        //         current.next = current.next.next;
+        //     }
+        //     else
+        //     {
+        //         current = current.next;
+        //     }
+        // }
+        // return dummy.next;
     }
 }
