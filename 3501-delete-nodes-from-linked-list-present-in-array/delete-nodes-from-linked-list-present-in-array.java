@@ -11,17 +11,24 @@
 class Solution {
     public ListNode modifiedList(int[] nums, ListNode head) 
     {
-        HashSet<Integer> set = new HashSet<>();
+        int max = -1;
         for(int num : nums)
         {
-            set.add(num);
+            max = max < num ? num : max;
         }
+
+        boolean[] numBool = new boolean[max+1];
+        for(int num : nums)
+        {
+            numBool[num] = true;
+        }
+
         if(head == null) return null;
         ListNode dummy = new ListNode(0,head);
         ListNode current = dummy;
         while(current.next != null)
         {
-            if(set.contains(current.next.val))
+            if(current.next.val < numBool.length && numBool[current.next.val] == true)
             {
                 current.next = current.next.next;
             }
