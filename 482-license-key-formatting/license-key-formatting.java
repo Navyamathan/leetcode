@@ -2,41 +2,26 @@ class Solution {
     public String licenseKeyFormatting(String s, int k) 
     {
         s = s.toUpperCase();
-        String[] temp = s.split("-");
-        String string = "";
-        for(int i=0; i<temp.length; i++)
+        StringBuilder sbTemp  = new StringBuilder();
+        for(int i=0; i<s.length(); i++)
         {
-            string += temp[i];
-        }
-        if(string.length() == 0)
-        {
-            return string;
-        }
-        String result = "";
-        int i = 0;
-        System.out.println(string.length());
-        if(string.length()%k != 0)
-        {
-            int remainder = string.length()%k;
-            result += string.substring(0,remainder);
-            result += "-";
-            System.out.println(remainder);
-            i = remainder;
-        }
-        while(true)
-        {
-            if(i+k <= string.length())
+            if(s.charAt(i) != '-')
             {
-                result += string.substring(i,i+k);
-                result += "-";
-                i = i+k;
-            }
-            else
-            {
-                break;
+                sbTemp.append(s.charAt(i));
             }
         }
-        result = result.substring(0,result.length()-1);
-        return result;
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+        for(int i=sbTemp.length()-1 ; i>=0; i--)
+        {
+            sb.append(sbTemp.charAt(i));
+            count++;
+            if(count == k && i != 0)
+            {
+                sb.append("-");
+                count = 0;
+            } 
+        }
+        return sb.reverse().toString();
     }
 }
