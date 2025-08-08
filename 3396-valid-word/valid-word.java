@@ -6,8 +6,8 @@ class Solution
         {
             return false;
         }
-        int cons = 0;
-        int vowel = 0;
+        boolean cons = false;
+        boolean vowel = false;
         ArrayList<Character> list = new ArrayList<>();
         list.add('a');
         list.add('e');
@@ -25,18 +25,18 @@ class Solution
             }
             else if(list.contains(ch))
             {
-                vowel++;
+                vowel = true;
             }
             else if(temp >= 0 && temp <= 26)
             {
-                cons++;
+                cons = true;
             }
             else
             {
                 return false;
             }
         }
-        if(cons >= 1 && vowel >= 1)
+        if(cons && vowel)
         {
             return true;
         }
