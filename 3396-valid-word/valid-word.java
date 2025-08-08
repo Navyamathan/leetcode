@@ -8,12 +8,6 @@ class Solution
         }
         boolean cons = false;
         boolean vowel = false;
-        ArrayList<Character> list = new ArrayList<>();
-        list.add('a');
-        list.add('e');
-        list.add('i');
-        list.add('o');
-        list.add('u');
         for(int i=0; i<word.length(); i++)
         {
             char ch = word.charAt(i);
@@ -26,7 +20,7 @@ class Solution
             {
                 continue;
             }
-            else if(list.contains(ch))
+            else if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
             {
                 vowel = true;
             }
