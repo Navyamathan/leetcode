@@ -18,8 +18,11 @@ class Solution
         {
             char ch = word.charAt(i);
             ch = Character.toLowerCase(ch);
-            int temp = ch-'a';
-            if(Character.isDigit(ch))
+            if(!Character.isLetterOrDigit(ch))
+            {
+                return false;
+            }
+            else if(Character.isDigit(ch))
             {
                 continue;
             }
@@ -27,13 +30,9 @@ class Solution
             {
                 vowel = true;
             }
-            else if(temp >= 0 && temp <= 26)
-            {
-                cons = true;
-            }
             else
             {
-                return false;
+                cons = true;
             }
         }
         if(cons && vowel)
